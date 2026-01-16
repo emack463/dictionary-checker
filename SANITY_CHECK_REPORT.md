@@ -1,6 +1,6 @@
 # Lexical Checker - Sanity Check Report
 
-**Date:** January 11, 2026  
+**Date:** January 13, 2026  
 **Status:** ✓ PASSED
 
 ## Executive Summary
@@ -67,7 +67,7 @@ All code has been reviewed and tested. The application is functioning correctly 
 
 - **XML Parsing:** ~1,861 articles processed
 - **Tokenization:** 1.13M tokens in ~3 seconds
-- **Dictionary Check:** 72.39% found (111k word cache)
+- **Dictionary Check:** 76.87% combined (111k word cache, stemming + hyphen handling)
 - **CSV Export:** 4 files generated instantly
 
 ## Data Consistency Verification
@@ -78,7 +78,7 @@ All code has been reviewed and tested. The application is functioning correctly 
 | Total Tokens | 1,131,086 | 1,131,086 | ✓ |
 | Dictionary Words | 111,573 | 111,573 | ✓ |
 | CSV Lines (main) | 1,862 | 1,862 | ✓ |
-| Unknown Words | 69,001 | 69,001 | ✓ |
+| Unknown Words | 60,364 | 60,364 | ✓ |
 
 ## Recommendations for Future Enhancement
 

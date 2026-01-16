@@ -1,0 +1,2 @@
+year,file_count,total_tokens,found_count,not_found_count,found_percentage,avg_tokens_per_file,unique_not_found_words,error_rate_per_token
+1817,1861,1131086,818837,261637,72.39,607.8,60364,23.13

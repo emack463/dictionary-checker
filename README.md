@@ -21,7 +21,7 @@ A comprehensive tool to extract, tokenize, and validate text content from XML fi
 - **Smart Extraction**: Removes metadata while preserving article content
 - **Date-Based Naming**: Output files named by date pattern (`yyyy-mm_article-id.txt`)
 - **Text Tokenization**: Uses NLTK to break text into individual words
-- **Dictionary Validation**: Checks 1M+ tokens against 176,023 English dictionary entries
+- **Dictionary Validation**: Checks 1M+ tokens against 111,573 English dictionary entries
 - **Smart Categorization**: Classifies unknown words (misspellings, numbers, punctuation, etc.)
 - **Excel Export**: Generates CSV files ready for spreadsheet analysis
 - **Comprehensive Reports**: Detailed statistics and analysis at every step
@@ -178,10 +178,19 @@ OVERALL SUMMARY
 Files processed: 1,861
 Total tokens: 1,131,086
 Dictionary size: 111,573 words
+Stemming method: SNOWBALL
 
-✓ Found in dictionary: 818,837 (72.39%)
-✗ Not found: 312,249
-  Unique unknown: 69,001
+Found (original): 818,837 (75.78%)
+Found (via stem): 39,117 (3.46%)
+Found (via hyphenated): 11,495 (1.02%)
+TOTAL FOUND: 869,449 (76.87%)
+Not found: 261,637
+
+Stemming improvement: +3.46%
+Hyphenated improvement: +1.02%
+Unique words found via stem: 3,636
+Unique words found via hyphenated: 5,001
+Unique unknown: 60,364
 
 ======================================================================
 UNKNOWN WORDS ANALYSIS
@@ -299,10 +308,10 @@ Each article from your XML becomes a separate text file:
 Metric,Value
 Total Files,1861
 Total Tokens,1131086
-Tokens Found in Dictionary,818837
-Tokens Not Found,312249
-Found Percentage,72.39%
-Unique Unknown Words,69001
+Tokens Found in Dictionary,869449
+Tokens Not Found,261637
+Found Percentage,76.87%
+Unique Unknown Words,60364
 ```
 
 #### 3. unknown_words.csv
@@ -401,19 +410,19 @@ Example processing results from sample dataset:
 - **Output:** 1,861 text files
 - **Total tokens:** 1,131,086 words
 - **Unique tokens:** 99,305 different words
-- **Dictionary matches:** 72.39% (818,837 tokens found)
-- **Unknown words:** 69,001 unique unknown tokens
+- **Dictionary matches:** 76.87% (869,449 tokens found)
+- **Unknown words:** 60,364 unique unknown tokens
 - **Processing time:** ~30 seconds total
 
 ### Unknown Word Breakdown
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| Potential Misspellings | 50,356 | 73.0% |
-| Hyphenated Words | 12,364 | 17.9% |
-| Other Tokens | 3,972 | 5.8% |
-| Numbers | 1,747 | 2.5% |
-| Mixed Alphanumeric | 549 | 0.8% |
+| Potential Misspellings | 46,720 | 77.4% |
+| Hyphenated Words | 7,498 | 12.4% |
+| Other Tokens | 3,972 | 6.6% |
+| Numbers | 1,747 | 2.9% |
+| Mixed Alphanumeric | 414 | 0.7% |
 | Punctuation | 11 | 0.0% |
 | Contractions | 2 | 0.0% |
 

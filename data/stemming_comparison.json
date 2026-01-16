@@ -1,0 +1,32 @@
+{
+  "porter": {
+    "original_found": 818837,
+    "stem_found": 37124,
+    "combined_found": 855961,
+    "not_found": 275125,
+    "original_percentage": 74.85058896012842,
+    "combined_percentage": 75.67603170758015,
+    "stem_contribution": 3.282155379873856,
+    "unique_stem_found": 3559
+  },
+  "snowball": {
+    "original_found": 818837,
+    "stem_found": 39117,
+    "combined_found": 857954,
+    "not_found": 273132,
+    "original_percentage": 74.9872020176397,
+    "combined_percentage": 75.8522340476321,
+    "stem_contribution": 3.458357719925806,
+    "unique_stem_found": 3636
+  },
+  "lemmatize": {
+    "original_found": 818837,
+    "stem_found": 44057,
+    "combined_found": 862894,
+    "not_found": 268192,
+    "original_percentage": 75.32798113021823,
+    "combined_percentage": 76.28898244695806,
+    "stem_contribution": 3.8951061192517638,
+    "unique_stem_found": 3490
+  }
+}

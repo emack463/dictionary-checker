@@ -1,0 +1,8 @@
+token_type,token_count,percentage,unique_count,found_in_dict,not_found_in_dict,accuracy_rate
+Alphabetic,1055489,93.32,67563,817484,238005,77.45
+Compound,23519,2.08,12494,1336,22183,5.68
+Grammatical,19,0.0,3,17,2,89.47
+Mixed,699,0.06,549,0,699,0.0
+Numeric,37595,3.32,1747,0,37595,0.0
+Other,6424,0.57,3437,0,6424,0.0
+Punctuation,7341,0.65,11,0,7341,0.0

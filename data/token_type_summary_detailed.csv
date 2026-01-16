@@ -1,0 +1,11 @@
+main_type,subtype,token_count,percentage,examples
+Alphabetic,All Uppercase,20395,1.8,VOLUME; SECON; PI; ST; OF; SUPPLE; ME; VT; TO; TIE
+Alphabetic,Capitalized,167490,14.81,Classified; Ad; No; TitleThe; Scotsman; Thfe; Jay; Engravings; BKITAyNICA; By
+Alphabetic,Lowercase,867604,76.71,is; published; to; price; in; boards; illustrated; willi; enriched; with
+Compound,Hyphenated,23519,2.08,D-; Scu-nas; Lignt-honse; well-known; -Bacon; an-; Sciences-BAKING; Basket-making; eel-s; -nt
+Grammatical,Contraction,19,0.0,'S; O'CONNORThe; M'KINLAY
+Mixed,Alphanumeric,699,0.06,1-y; 9-1-j-; G-1-; G-10; er-1; de-1; i-1; 7-t; 100-francs; nsc-1
+Numeric,Formatted Number,3204,0.28,1817-1858; -57; 8-21; -7; -3; -6; -2; -12; -222223; 3-3-
+Numeric,Integer,34391,3.04,2; 111; 4; 5; 11; 20; 12; 13; 28; 55
+Other,Unclassified,6424,0.57,JAN.; 1-+; _AIjGOW; _MARKETS; _A; _Snf; _Browii; _CtSs; _s; _73
+Punctuation,Symbol Only,7341,0.65,"--; (; ); -; .; ,; ...; '; &; !"

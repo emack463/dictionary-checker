@@ -63,8 +63,9 @@ def main():
     print("="*70)
     print()
     
-    # Run dictionary check
-    results = check_tokenized_files(tokenized_path, db_path, output_path)
+    # Run dictionary check WITH STEMMING (Snowball method) AND HYPHENATED HANDLING
+    results = check_tokenized_files(tokenized_path, db_path, output_path, 
+                                   use_stemming=True, stem_method='snowball')
     
     # Display summary
     print("\n" + "="*70)
@@ -73,10 +74,36 @@ def main():
     print(f"Files processed: {results['summary']['total_files']:,}")
     print(f"Total tokens: {results['summary']['total_tokens']:,}")
     print(f"Dictionary size: {results['summary']['dictionary_words']:,} words")
+    print(f"Stemming method: {results['summary'].get('stem_method', 'None').upper()}")
     print()
-    print(f"✓ Found in dictionary: {results['summary']['total_found']:,} ({results['summary']['found_percentage']:.2f}%)")
-    print(f"✗ Not found: {results['summary']['total_not_found']:,}")
-    print(f"  Unique unknown: {results['summary']['unique_not_found_words']:,}")
+    
+    # Show stemming and hyphenated results if enabled
+    if results['summary'].get('stemming_enabled'):
+        print(f"Found (original): {results['summary']['total_found']:,} ({results['summary']['found_percentage']:.2f}%)")
+        print(f"Found (via stem): {results['summary']['total_stem_found']:,} ({results['summary']['stem_contribution']:.2f}%)")
+        
+        # Show hyphenated stats if available
+        if results['summary'].get('total_hyphenated_found', 0) > 0:
+            print(f"Found (via hyphenated): {results['summary']['total_hyphenated_found']:,} ({results['summary']['hyphenated_contribution']:.2f}%)")
+        
+        print(f"TOTAL FOUND: {results['summary']['total_combined_found']:,} ({results['summary']['combined_found_percentage']:.2f}%)")
+        print(f"Not found: {results['summary']['total_not_found']:,}")
+        print()
+        print(f"Stemming improvement: +{results['summary']['stem_contribution']:.2f}%")
+        
+        if results['summary'].get('total_hyphenated_found', 0) > 0:
+            print(f"Hyphenated improvement: +{results['summary']['hyphenated_contribution']:.2f}%")
+        
+        print(f"Unique words found via stem: {results['summary']['unique_stem_found_words']:,}")
+        
+        if results['summary'].get('unique_hyphenated_found_words', 0) > 0:
+            print(f"Unique words found via hyphenated: {results['summary']['unique_hyphenated_found_words']:,}")
+        
+        print(f"Unique unknown: {results['summary']['unique_not_found_words']:,}")
+    else:
+        print(f"Found in dictionary: {results['summary']['total_found']:,} ({results['summary']['found_percentage']:.2f}%)")
+        print(f"Not found: {results['summary']['total_not_found']:,}")
+        print(f"Unique unknown: {results['summary']['unique_not_found_words']:,}")
     
     # Categorize unknown words
     print("\n" + "="*70)
